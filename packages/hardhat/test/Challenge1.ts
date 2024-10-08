@@ -57,6 +57,7 @@ describe("🚩 Challenge 1: 🔏 Decentralized Staking App", function () {
         );
       } else {
         it("If enough is staked and time has passed, you should be able to complete", async function () {
+          
           const timeLeft1 = await stakerContract.timeLeft();
           console.log("\t", "⏱ There should be some time left: ", Number(timeLeft1));
           expect(Number(timeLeft1)).to.greaterThan(0);
@@ -80,6 +81,7 @@ describe("🚩 Challenge 1: 🔏 Decentralized Staking App", function () {
           const result = await exampleExternalContract.completed();
           console.log("\t", " 🥁 complete: ", result);
           expect(result).to.equal(true);
+          
         });
 
         it("Should redeploy Staker, stake, not get enough, and withdraw", async function () {
